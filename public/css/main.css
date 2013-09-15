@@ -98,6 +98,41 @@ textarea {
     margin: 0 auto;
 }
 .room {
+
+}
+.messages {
+    width: 80%;
+    height: 300px;
+    float: left;
+    background: #ddd;
+    padding:10px;
+    border-radius: 4px;
+    -webkitbox-sizing:  border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+}
+.room-list {
+    width: 20%;
+    float: left;
+    padding: 10px;
+    border-radius: 4px;
+    margin:0;
+    -webkitbox-sizing:  border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+}
+.room-list li {
+    cursor: pointer;
+    list-style: none;
+    margin: 0;
+    padding: 7px 10px;
+    border-bottom: 1px solid #ddd;
+}
+/*.content {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.room {
     background: #ddd;
     margin: 10px 0 20px;
 }
@@ -109,28 +144,26 @@ textarea {
     margin-bottom: 1em;
     margin-right: 10px;
 }
-
-
 .room-list {
-float: right;
-width: 100px;
-height: 300px;
-overflow: auto;
+    float: right;
+    width: 100px;
+    height: 300px;
+    overflow: auto;
 }
 .room-list div {
-border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 .room-list div:hover {
-background-color: #ddd;
+    background-color: #ddd;
 }
 .send-message {
-width: 700px;
-margin-bottom: 1em;
-margin-right: 1em;
+    width: 700px;
+    margin-bottom: 1em;
+    margin-right: 1em;
 }
 .help {
-font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+    font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+}*/
 
 
 

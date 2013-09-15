@@ -1,6 +1,10 @@
 //	practice safe XSS, use protection.
-function divEscapedContentElement(message) {
-	return $('<div></div>').text(message);
+function divEscapedContentElement(message, wrapper) {
+	if(wrapper) {
+		return $('<'+wrapper+'></'+wrapper+'>').text(message);
+	} else {
+		return $('<div></div>').text(message);
+	}
 }
 function divSystemContentElement(message) {
 	return $('<div></div>').html('<i>' + message + '</i>');
@@ -64,11 +68,11 @@ $(function() {
 		for(var room in rooms) {
 			room = room.substring(1, room.length);
 			if(room != '') {
-				roomList$.append(divEscapedContentElement(room));
+				roomList$.append(divEscapedContentElement(room, 'li'));
 			}
 		}
 		//	switch rooms by clicking on names
-		roomList$.find('div').on('click', function() {
+		roomList$.find('li').on('click', function() {
 			chatApp.processCommand('/join ' + $(this).text());
 			sendMessage$.focus();
 		});
