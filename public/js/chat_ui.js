@@ -77,6 +77,10 @@ $(function() {
 			sendMessage$.focus();
 		});
 	});
+	//	name list
+	// socket.on('names', function(names) {
+
+	// })
 	//	request room list in intervals
 	setInterval(function() {
 		socket.emit('rooms');

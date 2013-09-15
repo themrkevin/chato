@@ -29,6 +29,9 @@ body {
  * Customize the background color to match your design.
  */
 
+body {
+    color: #6D929B;
+}
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -92,25 +95,31 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+    -webkit-box-sizing:   border-box;
+    -moz-box-sizing:      border-box; 
+    box-sizing:           border-box;
+}
 .content {
-    max-width: 1024px;
+    max-width: 960px;
     margin: 0 auto;
 }
 .room {
 
 }
 .messages {
-    width: 80%;
+    width: 78%;
     height: 300px;
+    margin: 0 2% 0 0;
     float: left;
-    background: #ddd;
+    background: #F5FAFA;
     padding:10px;
     border-radius: 4px;
     overflow: auto;
-    -webkitbox-sizing:  border-box;
-    -moz-box-sizing:    border-box;
-    box-sizing:         border-box;
+}
+.message .user {
+    font-weight: bold;
 }
 .room-list {
     width: 20%;
@@ -118,53 +127,43 @@ textarea {
     padding: 10px;
     border-radius: 4px;
     margin:0;
-    -webkitbox-sizing:  border-box;
-    -moz-box-sizing:    border-box;
-    box-sizing:         border-box;
+    background: #E8D0A9;
 }
 .room-list li {
     cursor: pointer;
     list-style: none;
     margin: 0;
     padding: 7px 10px;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #6D929B;
 }
-/*.content {
-    max-width: 1024px;
-    margin: 0 auto;
+.room-list li:nth-child(1) {
+    border:none;
 }
-.room {
-    background: #ddd;
-    margin: 10px 0 20px;
+.send-form {
+    width: 78%;
+    margin: 0 2% 0 0;
 }
-.messages {
-    max-width: 960px;
-    height: 300px;
-    overflow: auto;
-    background-color: #eee;
-    margin-bottom: 1em;
-    margin-right: 10px;
+.send-form input {
+    border: none;
+    padding: 10px;
+    margin: 15px 0;
+    color: #6D929B;
 }
-.room-list {
-    float: right;
-    width: 100px;
-    height: 300px;
-    overflow: auto;
-}
-.room-list div {
-    border-bottom: 1px solid #eee;
-}
-.room-list div:hover {
-    background-color: #ddd;
+.send-form input:focus {
+    outline: none;
 }
 .send-message {
-    width: 700px;
-    margin-bottom: 1em;
-    margin-right: 1em;
+    border-radius: 4px 0 0 4px;
+    width: 80%;
+    float: left;
+    background: #f1f1f1;
 }
-.help {
-    font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
-}*/
+.send-button {
+    border-radius: 0 4px 4px 0;
+    width: 20%;
+    float: left;
+    background: #ACD1E9;
+}
 
 
 

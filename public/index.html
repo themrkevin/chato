@@ -22,7 +22,7 @@
     <![endif]-->
 
     <div id="content" class="content clearfix">
-        <h1 id="room" class="room" clearfix></h1>
+        <h1 id="room" class="room clearfix"></h1>
         <div id="messages" class="messages">
         </div>
         <ul id="room-list" class="room-list">
@@ -30,14 +30,14 @@
         <form id="send-form" class="send-form clearfix">
             <input class="send-message" />
             <input class="send-button" type="submit" value="Send" />
-            <div id="help" class="help">
+        </form>
+        <div id="help" class="help clearfix">
                 Chat commands:
                 <ul>
                     <li>Change nickname: <code>/nick [username]</code></li>
                     <li>Join/create room: <code>/join [room name]</code></li>
                 </ul>
             </div>
-        </form>
     </div>
 
     <script src="../socket.io/socket.io.js"></script>
