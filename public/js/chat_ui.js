@@ -12,7 +12,6 @@ function processUserInput(chatApp, socket) {
 		message = sendMessage$.val(),
 		messages$ = $('#messages'),
 		systemMessage;
-		console.log(message);
 	//	treat messages that start with '/' as a command
 	if(message.charAt(0) == '/') {
 		console.log(chatApp);
