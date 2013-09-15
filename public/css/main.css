@@ -121,23 +121,33 @@ textarea {
 .message .user {
     font-weight: bold;
 }
-.room-list {
+.sidebar {
     width: 20%;
     float: left;
+}
+.sidebar-list {
     padding: 10px;
     border-radius: 4px;
-    margin:0;
+    margin:0 0 10px;
     background: #E8D0A9;
 }
-.room-list li {
+.sidebar-list li {
     cursor: pointer;
     list-style: none;
     margin: 0;
     padding: 7px 10px;
     border-top: 1px solid #6D929B;
 }
-.room-list li:nth-child(1) {
+.sidebar-list li:hover {
+    background: #B7AFA3;
+    color: #F5FAFA;
+}
+.user-list li {
+    cursor: default;
+}
+.sidebar-list li:nth-child(1) {
     border:none;
+    border-radius: 3px 3px 0 0;
 }
 .send-form {
     width: 78%;

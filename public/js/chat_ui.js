@@ -39,6 +39,7 @@ $(function() {
 		messages$ = $('#messages'),
 		room$ = $('#room'),
 		roomList$ = $('#room-list'),
+		userList$ = $('#user-list'),
 		sendForm$ = $('#send-form'),
 		sendMessage$ = sendForm$.find('.send-message');
 	//	name change
@@ -77,13 +78,15 @@ $(function() {
 			sendMessage$.focus();
 		});
 	});
-	//	name list
-	// socket.on('names', function(names) {
-
-	// })
+	//	names list
+	socket.on('users', function(userList) {
+		userList$.empty();
+		userList$.html(userList);
+	})
 	//	request room list in intervals
 	setInterval(function() {
 		socket.emit('rooms');
+		socket.emit('users');		
 	}, 1000);
 	sendMessage$.focus();
 	sendForm$.on('submit',function() {
