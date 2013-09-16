@@ -32,8 +32,8 @@ function processUserInput(chatApp, socket) {
 		//	if its not a command, then we broadcast to room
 		chatApp.sendMessage($('#room').text(), message);
 		messages$.append(divEscapedContentElement(message));
-		messages$.scrollTop(messages$.prop('scrollHeight'));
 	}
+	messages$.scrollTop(messages$.prop('scrollHeight'));
 	sendMessage$.val('');
 }
 //	client-side initialization
