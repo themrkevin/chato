@@ -38,7 +38,25 @@ Chat.prototype.processCommand = function(command) {
 			break;
 
 		default:
-			message = 'Urecognized command.';
+			message = 'Unrecognized command.';
+			break;
+	}
+	return message;
+}
+//	fancy chat emotes
+Chat.prototype.processEmote = function(emote) {
+	var words = emote.split(' '),
+		emote = words[0].substring(1, words[0].length - 1).toLowerCase(),
+		message = false;
+	console.log(emote);
+	switch(emote) {
+		case 'unicorn':
+			words.shift();
+			message = '<img src="../img/ultra-unicorn.png" class="emote" />';
+			break;
+
+		default:
+			message = emote;
 			break;
 	}
 	return message;

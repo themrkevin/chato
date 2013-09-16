@@ -20,29 +20,36 @@
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-
-    <div id="content" class="content clearfix">
+    <header id="header" class="content">
         <h1 id="room" class="room clearfix"></h1>
-        <div id="messages" class="messages">
+    </header>
+    <div id="content" class="content clearfix">
+        <div class="main">
+            <div id="messages" class="messages">
+            </div>
+            <form id="send-form" class="send-form clearfix">
+                <input class="send-message" />
+                <input class="send-button" type="submit" value="Send" />
+            </form>
         </div>
         <div class="sidebar">
-            <ul id="room-list" class="sidebar-list room-list">
+            <!-- <h2 data-trigger="room-list">Rooms</h2> -->
+            <ul id="room-list" data-target="room-list" class="sidebar-list room-list">
             </ul>
-            <ul id="user-list" class="sidebar-list user-list">
+            <!-- <h2 data-trigger="user-list">Users</h2> -->
+            <ul id="user-list" data-target="user-list" class="sidebar-list user-list">
             </ul>
         </div>
-        <form id="send-form" class="send-form clearfix">
-            <input class="send-message" />
-            <input class="send-button" type="submit" value="Send" />
-        </form>
-        <div id="help" class="help clearfix">
-                Chat commands:
-                <ul>
-                    <li>Change nickname: <code>/nick [username]</code></li>
-                    <li>Join/create room: <code>/join [room name]</code></li>
-                </ul>
-            </div>
     </div>
+    <div id="help" class="help content clearfix">
+            Chat commands:
+            <ul>
+                <li>Change nickname: <code>/nick [username]</code></li>
+                <li>Join/create room: <code>/join [room name]</code></li>
+            </ul>
+        </div>
+    <footer id="footer">
+    </footer>
 
     <script src="../socket.io/socket.io.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

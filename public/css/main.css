@@ -108,11 +108,14 @@ textarea {
 .room {
 
 }
-.messages {
+.main {
     width: 78%;
-    height: 300px;
     margin: 0 2% 0 0;
     float: left;
+}
+.messages {
+    height: 500px;
+    max-height: 300px;
     background: #F5FAFA;
     padding:10px;
     border-radius: 4px;
@@ -130,6 +133,8 @@ textarea {
     border-radius: 4px;
     margin:0 0 10px;
     background: #E8D0A9;
+    height: 171px;
+    overflow: auto;
 }
 .sidebar-list li {
     cursor: pointer;
@@ -142,6 +147,9 @@ textarea {
     background: #B7AFA3;
     color: #F5FAFA;
 }
+.user-list {
+    background: #C1DAD6;
+}
 .user-list li {
     cursor: default;
 }
@@ -150,8 +158,7 @@ textarea {
     border-radius: 3px 3px 0 0;
 }
 .send-form {
-    width: 78%;
-    margin: 0 2% 0 0;
+    
 }
 .send-form input {
     border: none;

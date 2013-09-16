@@ -16,15 +16,20 @@ function processUserInput(chatApp, socket) {
 		message = sendMessage$.val(),
 		messages$ = $('#messages'),
 		systemMessage;
-	//	treat messages that start with '/' as a command
 	if(message.charAt(0) == '/') {
-		console.log(chatApp);
+		//	treat messages that start with '/' as a command
 		systemMessage = chatApp.processCommand(message);
 		if(systemMessage) {
 			messages$.append(divSystemContentElement(systemMessage));
 		}
-	//	if its not a command, then we broadcast to room
+	} else if(message.charAt(0) == '(') {
+		//	'(' means emote
+		systemMessage = chatApp.processEmote(message);
+		if(systemMessage) {
+			messages$.append(systemMessage);
+		}
 	} else {
+		//	if its not a command, then we broadcast to room
 		chatApp.sendMessage($('#room').text(), message);
 		messages$.append(divEscapedContentElement(message));
 		messages$.scrollTop(messages$.prop('scrollHeight'));
@@ -83,7 +88,7 @@ $(function() {
 		userList$.empty();
 		userList$.html(userList);
 	})
-	//	request room list in intervals
+	//	request room & user lists in intervals
 	setInterval(function() {
 		socket.emit('rooms');
 		socket.emit('users');		
