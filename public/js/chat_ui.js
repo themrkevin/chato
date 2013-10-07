@@ -27,7 +27,7 @@ function processUserInput(chatApp, socket) {
 		systemMessage = chatApp.processEmote(message);
 		if(systemMessage) {
 			chatApp.sendMessage($('#room').text(), systemMessage, 'emote');
-			messages$.append(systemMessage);
+			messages$.append('<div>'+systemMessage+'</div>');
 		}
 	} else {
 		//	if its not a command, then we broadcast to room
