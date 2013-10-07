@@ -51,7 +51,6 @@ Chat.prototype.processEmote = function(emote) {
 	var words = emote.split(' '),
 		emote = words[0].substring(1, words[0].length - 1).toLowerCase(),
 		message = false;
-	console.log(emote);
 	switch(emote) {
 		case 'unicorn':
 			words.shift();
