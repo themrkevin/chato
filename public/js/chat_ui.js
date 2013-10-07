@@ -26,6 +26,7 @@ function processUserInput(chatApp, socket) {
 		//	'(' means emote
 		systemMessage = chatApp.processEmote(message);
 		if(systemMessage) {
+			chatApp.sendMessage($('#room').text(), systemMessage, 'emote');
 			messages$.append(systemMessage);
 		}
 	} else {
@@ -33,8 +34,13 @@ function processUserInput(chatApp, socket) {
 		chatApp.sendMessage($('#room').text(), message);
 		messages$.append(divEscapedContentElement(message));
 	}
-	messages$.scrollTop(messages$.prop('scrollHeight'));
+	scrollMessages();
 	sendMessage$.val('');
+}
+
+function scrollMessages() {
+	var messages$ = $('#messages');
+	messages$.scrollTop(messages$.prop('scrollHeight'));
 }
 //	client-side initialization
 var socket = io.connect();
@@ -65,8 +71,13 @@ $(function() {
 	});
 	//	display received messages
 	socket.on('message', function(message) {
+		console.log('Chat UI on Message',message);
 		var newElement = $('<div></div>').text(message.text);
+		if(message.type === 'emote') {
+			newElement = $('<div></div>').html(message.text);
+		}
 		messages$.append(newElement);
+		scrollMessages();
 	});
 	//	rooms list
 	socket.on('rooms', function(rooms) {

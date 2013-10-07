@@ -5,11 +5,14 @@ var Chat = function(socket) {
 	this.socket = socket;
 }
 //	sending messages
-Chat.prototype.sendMessage = function(room, text) {
+Chat.prototype.sendMessage = function(room, text, type) {
+	type = type ? type : false;
 	var message = {
 		room: room,
-		text: text
+		text: text,
+		type: type
 	};
+	// console.log('sendMessage', message);
 	this.socket.emit('message', message);
 }
 //	room changing
