@@ -71,7 +71,7 @@ $(function() {
 	});
 	//	display received messages
 	socket.on('message', function(message) {
-		console.log('Chat UI on Message',message);
+		// console.log('Chat UI on Message',message);
 		var newElement = $('<div></div>').text(message.text);
 		if(message.type === 'emote') {
 			newElement = $('<div></div>').html(message.text);
